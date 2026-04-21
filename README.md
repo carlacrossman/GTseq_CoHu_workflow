@@ -73,10 +73,21 @@ The directory housing the snakemake workflow should be set up in a consistent ma
   
 Notes:   
 - If you have a negative control that will be analyzed alongside everything, it needs to be omitted from the GTSeq Compile steps. This will be done automatically if the sample name begins with "neg".  
+First begin by cloning this repository and setting up the additional required directories:  
+``` bash
+git clone https://github.com/carlacrossman/GTseq_CoHu_workflow.git
+
+cd GTseq_CoHu_workflow
+
+mkdir data
+mkdir intermediate_files
+mkdir results
+mkdir logs
+```
 
 **Running Instructions** 
   
-The worksflow runs very quickly on the panel (<5 mins for 12 samples). I have been running it on an interactive node with 4 threads and -mem 8000M. One command will require 4 threads (bwa). This is currently hard-coded, but could be adjusted if needed. Always remember to go through a dry run before running the pipepline. It is also a good idea to test on a couple samples first to verify each step works.  
+The workflow runs very quickly on the panel (<5 mins for 12 samples). I have been running it on an interactive node with 4 threads and -mem 8000M. One command will require 4 threads (bwa). This is currently hard-coded, but could be adjusted if needed. Always remember to go through a dry run before running the pipepline. It is also a good idea to test on a couple samples first to verify each step works.  
 
 The following are the exact steps I take to run the workflow:  
 ```
