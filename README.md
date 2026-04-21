@@ -14,7 +14,7 @@ At least one mitochondrial position seems to display evidence of heteroplasmy. T
   
 The snakemake workflow takes raw sequemce data and merges pair-end reads for each sample. Genotypes are called with the GTSeq pipeline (Campbell et. al 2014; scripts available at github.com/GTseq/GTseq-Pipeline). Paired reads are also mapped against the indexed reference sequence of the mitogenome. The 'genotypes' for the known variant sites in the mitogenome are called as if they are diploid and reformatted in R to identify mitotypes and provide allele depth data to support heteroplasmic calls.
   
-![Fig1_workflow](https://github.com/carlacrossman/GTseq_CoHu_workflow/GTseq_CoHu_rulegraph.png)
+![Fig1_workflow](https://github.com/carlacrossman/GTseq_CoHu_workflow/blob/main/GTseq_CoHu_rulegraph.png)
   
 **System Requirements**
   
