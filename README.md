@@ -37,38 +37,39 @@ Notes:
 - After loading Perl you will need the Approx module. It can be installed by typing ```cpan```, then running ```install String::Approx```(this only needs to be done once).
 - The R portion of the workflow is set to install the necessarily R libraries if they are not installed. However, compute nodes (including interactive nodes) on the Digital Alliance system do not have access to the internet so they will not be able to be installed.  
   
-**File System Requirements**
+**File System Requirements**  
+
 The directory housing the snakemake workflow should be set up in a consistent matter and contain the files listed below:  
 
--GTSeq_CoHu_workflow
-    -data
-        -samples.txt (a list of sample names)
-        -raw fastq files (renamed to: {SAMPLE}_R1.fastq.gz, {SAMPLE}_R2.fastq.gz etc.)
-    -intermediate_files
-    -results
-    -logs
-    -scripts
-        -compile_haplotypes.R
-        -mitotyping.R
-    -dependency_files
-        -364_sites_genotyper_input.csv
-        -364_sites_Seqtest.txt
-        -CoHu_mtdna_haplotype_XII.fasta
-        -CoHu_mtdna_haplotype_XII.fasta.fai
-        -CoHu_mtdna_haplotype_XII.fasta.pac
-        -CoHu_mtdna_haplotype_XII.fasta.sa
-        -CoHu_mtdna_haplotype_XII.fasta.bwt
-        -CoHu_mtdna_haplotype_XII.fasta.ann
-        -CoHu_mtdna_haplotype_XII.fasta.amb
-        -GTseq_HashSeqs.pl
-        -GTseq_SeqTest.pl
-        -GTseq_Genotyper_v3.pl
-        -GTseq_GenoCompile_v3.pl          
-        -GTseq_ErrorReport_v3.pl            
-        -site_depth 
-    -GTseq_CoHu_workflow.smk
-    -GTseq_CoHu_rulegraph.png
-    -README.md
+- GTSeq_CoHu_workflow
+    - data
+        - samples.txt (a list of sample names)
+        - raw fastq files (renamed to: {SAMPLE}_R1.fastq.gz, {SAMPLE}_R2.fastq.gz etc.)
+    - intermediate_files
+    - results
+    - logs
+    - scripts
+        - compile_haplotypes.R
+        - mitotyping.R
+    - dependency_files
+        - 364_sites_genotyper_input.csv
+        - 364_sites_Seqtest.txt
+        - CoHu_mtdna_haplotype_XII.fasta
+        - CoHu_mtdna_haplotype_XII.fasta.fai
+        - CoHu_mtdna_haplotype_XII.fasta.pac
+        - CoHu_mtdna_haplotype_XII.fasta.sa
+        - CoHu_mtdna_haplotype_XII.fasta.bwt
+        - CoHu_mtdna_haplotype_XII.fasta.ann
+        - CoHu_mtdna_haplotype_XII.fasta.amb
+        - GTseq_HashSeqs.pl
+        - GTseq_SeqTest.pl
+        - GTseq_Genotyper_v3.pl
+        - GTseq_GenoCompile_v3.pl          
+        - GTseq_ErrorReport_v3.pl            
+        - site_depth 
+    - GTseq_CoHu_workflow.smk
+    - GTseq_CoHu_rulegraph.png
+    - README.md
   
 Notes:   
 - If you have a negative control that will be analyzed alongside everything, it needs to be omitted from the GTSeq Compile steps. This will be done automatically if the sample name begins with "neg".  
