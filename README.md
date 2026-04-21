@@ -73,14 +73,14 @@ The directory housing the snakemake workflow should be set up in a consistent ma
   
 Notes:   
 - If you have a negative control that will be analyzed alongside everything, it needs to be omitted from the GTSeq Compile steps. This will be done automatically if the sample name begins with "neg".  
-
+- I have included two sample files as an example.    
+  
 First begin by cloning this repository and setting up the additional required directories:  
 ``` bash
 git clone https://github.com/carlacrossman/GTseq_CoHu_workflow.git
 
 cd GTseq_CoHu_workflow
 
-mkdir data
 mkdir intermediate_files
 mkdir results
 mkdir logs
