@@ -111,10 +111,10 @@ snakemake -j 4 -s GTseq_CoHu_workflow.sh
 
 Four output files should be generated in the results/ directory.  
 
--results
-    -allelic_depth_per_ind.csv
-    -CoHu_gtseq_compile
-    -CoHu_gtseq_compile_counts
-    -haplotype_table_depth.csv
+- results
+    - allelic_depth_per_ind.csv
+    - CoHu_gtseq_compile
+    - CoHu_gtseq_compile_counts
+    - haplotype_table_depth.csv
   
 At present the site 16716 is omitted from the final output files as there were problems with its amplifcaiton. We will fix this moving forward.
