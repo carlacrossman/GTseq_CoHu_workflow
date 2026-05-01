@@ -105,7 +105,7 @@ source ~/links/scratch/ENV/bin/activate
 snakemake -s GTseq_CoHu_workflow.sh --dryrun
 
 # If the dry run looks good, run:
-snakemake -j 4 -s GTseq_CoHu_workflow.sh
+snakemake -j 4 -s GTseq_CoHu_workflow.smk
 ```
 
 **Output**

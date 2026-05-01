@@ -48,7 +48,7 @@ rule GTSEQ_compile:
 		LOG="logs/ErrorReport_CoHu_gtseq"
 	shell:
 		"""
-		mv neg*.genos intermediate_files/
+		mv neg*.genos intermediate_files/ || true
 		perl dependency_files/GTseq_GenoCompile_v3.pl S > {output.GT}
 		perl dependency_files/GTseq_GenoCompile_v3.pl C > {output.COUNTS}
 		perl dependency_files/GTseq_ErrorReport_v3.pl dependency_files/364_sites_genotyper_input.csv > {output.LOG}
