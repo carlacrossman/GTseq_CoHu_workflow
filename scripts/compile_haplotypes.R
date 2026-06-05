@@ -33,13 +33,13 @@ file <- read.table(snakemake@input[["DEPTH"]], comment.char = "", header = TRUE)
 GT_long <- file %>% 
   select(POS = X.POS, REF, ALT, contains("GT")) %>%
   pivot_longer(cols = contains("GT"), names_to = "Sample", values_to = "Genotype") %>%
-  separate_wider_delim(Sample, delim = ".", names = c(NA, "Sample", NA, NA, NA))
+  separate_wider_delim(Sample, delim = ".", names = c("Sample", NA, NA, NA), too_few = "align_start")
 
 AD_long <- file %>% 
   select(POS = X.POS, REF, ALT, contains("AD")) %>%
   pivot_longer(cols = contains("AD"), names_to = "Sample", values_to = "AD") %>%
   separate_wider_delim(cols = AD, delim = ",", names = c("AD1", "AD2"), too_few = "align_start") %>%
-  separate_wider_delim(Sample, delim = ".", names = c(NA, "Sample", NA, NA, NA)) %>%
+  separate_wider_delim(Sample, delim = ".", names = c("Sample", NA, NA, NA), too_few = "align_start") %>%
   mutate(AD1 = as.numeric(AD1), AD2 = as.numeric(AD2)) %>%
   mutate(AD = ifelse(AD2 == 0 | is.na(AD2) | is.na(AD1) , NA, AD1 / AD2))
 
