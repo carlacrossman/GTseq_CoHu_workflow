@@ -35,8 +35,8 @@ rule GTSEQ_individuals:
 	shell:
 		"""
 		perl dependency_files/GTseq_HashSeqs.pl {input} > {output.HASH}
-		perl dependency_files/GTseq_SeqTest.pl dependency_files/364_sites_Seqtest.txt {output.HASH} > {output.SEQTEST}
-		perl dependency_files/GTseq_Genotyper_v3.pl dependency_files/364_sites_genotyper_input.csv {input} > {output.GENOS}
+		perl dependency_files/GTseq_SeqTest.pl dependency_files/344_sites_Seqtest.txt {output.HASH} > {output.SEQTEST}
+		perl dependency_files/GTseq_Genotyper_v3.pl dependency_files/344_sites_genotyper_input.csv {input} > {output.GENOS}
 		"""
 
 rule GTSEQ_compile:
@@ -51,7 +51,7 @@ rule GTSEQ_compile:
 		mv neg*.genos intermediate_files/ || true
 		perl dependency_files/GTseq_GenoCompile_v3.pl S > {output.GT}
 		perl dependency_files/GTseq_GenoCompile_v3.pl C > {output.COUNTS}
-		perl dependency_files/GTseq_ErrorReport_v3.pl dependency_files/364_sites_genotyper_input.csv > {output.LOG}
+		perl dependency_files/GTseq_ErrorReport_v3.pl dependency_files/344_sites_genotyper_input.csv > {output.LOG}
 		mv *.genos intermediate_files/
 		"""
 

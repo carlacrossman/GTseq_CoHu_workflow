@@ -1,9 +1,9 @@
 ## Snakemake workflow to analysze GT-Seq panel for Atlantic Whitefish ##
-*Updated April 21, 2026 by Carla Crossman*  
+*Updated June 8, 2026 by Carla Crossman*  
   
   
 **Under development**
-Currently optimized for 364 loci (including 350 nuclear sites and 14 mitochondrial loci). This panel is undergoing iterative improvements. As the panel changes, a few tweaks will need to be made to the input files 
+Currently optimized for 358 loci (including 344 nuclear sites and 14 mitochondrial loci). This panel is undergoing iterative improvements. As the panel changes, a few tweaks will need to be made to the input files. 
   
 **Background**
 The GT-Seq panel was developed using SNPs identified with low coverage whole genome sequence data originally obtained to call mitotypes. These SNPs were filtered to select variable sites that would be informative for ongoing diversity monitoring. Primers were designed and optimized using Primer3 and mfeprimer. Additional primers were designed to capture the known variant sites in the mitochondrial genome. 
@@ -52,8 +52,8 @@ The directory housing the snakemake workflow should be set up in a consistent ma
         - compile_haplotypes.R
         - mitotyping.R
     - dependency_files
-        - 364_sites_genotyper_input.csv
-        - 364_sites_Seqtest.txt
+        - 344_sites_genotyper_input.csv
+        - 344_sites_Seqtest.txt
         - CoHu_mtdna_haplotype_XII.fasta
         - CoHu_mtdna_haplotype_XII.fasta.fai
         - CoHu_mtdna_haplotype_XII.fasta.pac
@@ -70,7 +70,8 @@ The directory housing the snakemake workflow should be set up in a consistent ma
     - GTseq_CoHu_workflow.smk
     - GTseq_CoHu_rulegraph.png
     - README.md
-  
+
+    
 Notes:   
 - If you have a negative control that will be analyzed alongside everything, it needs to be omitted from the GTSeq Compile steps. This will be done automatically if the sample name begins with "neg".  
 - I have included two sample files as an example.    
@@ -118,4 +119,4 @@ Four output files should be generated in the results/ directory.
     - CoHu_gtseq_compile_counts
     - haplotype_table_depth.csv
   
-At present the site 16716 is omitted from the final output files as there were problems with its amplifcaiton. We will fix this moving forward.
+mtDNA calls are not included in the output along side the nuclear sites as two of the sites were called by the same primer pair and therefore, using the same forward probe does not work properly to call those sites.
